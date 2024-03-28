@@ -1,0 +1,1 @@
+\\LSC-SRV-7210-0\tflahaut$\Documents\Visual Studio 2015\Projects\wfaAPJobs\wfaAPJobs\bin\Release\wfaAPJobs.exe.config
