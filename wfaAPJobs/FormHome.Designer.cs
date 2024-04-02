@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormHome));
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tbHome = new System.Windows.Forms.TabControl();
             this.tpListOffers = new System.Windows.Forms.TabPage();
@@ -91,7 +92,7 @@
             this.tpListOffers.Controls.Add(this.btnCheckOffer);
             this.tpListOffers.Controls.Add(this.labeloffers);
             this.tpListOffers.Controls.Add(this.dgvListOffers);
-            this.tpListOffers.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tpListOffers.Font = new System.Drawing.Font("Open Sans", 8.25F);
             this.tpListOffers.Location = new System.Drawing.Point(4, 22);
             this.tpListOffers.Name = "tpListOffers";
             this.tpListOffers.Padding = new System.Windows.Forms.Padding(3);
@@ -103,6 +104,7 @@
             // btnRemoveOffer
             // 
             this.btnRemoveOffer.Enabled = false;
+            this.btnRemoveOffer.Font = new System.Drawing.Font("Open Sans", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRemoveOffer.Location = new System.Drawing.Point(260, 347);
             this.btnRemoveOffer.Name = "btnRemoveOffer";
             this.btnRemoveOffer.Size = new System.Drawing.Size(121, 27);
@@ -113,6 +115,7 @@
             // 
             // btnRefresh
             // 
+            this.btnRefresh.Font = new System.Drawing.Font("Open Sans", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRefresh.Location = new System.Drawing.Point(6, 347);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(121, 27);
@@ -124,6 +127,7 @@
             // btnCheckOffer
             // 
             this.btnCheckOffer.Enabled = false;
+            this.btnCheckOffer.Font = new System.Drawing.Font("Open Sans", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCheckOffer.Location = new System.Drawing.Point(133, 347);
             this.btnCheckOffer.Name = "btnCheckOffer";
             this.btnCheckOffer.Size = new System.Drawing.Size(121, 27);
@@ -135,10 +139,10 @@
             // labeloffers
             // 
             this.labeloffers.AutoSize = true;
-            this.labeloffers.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labeloffers.Font = new System.Drawing.Font("Open Sans", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labeloffers.Location = new System.Drawing.Point(6, 13);
             this.labeloffers.Name = "labeloffers";
-            this.labeloffers.Size = new System.Drawing.Size(121, 17);
+            this.labeloffers.Size = new System.Drawing.Size(115, 19);
             this.labeloffers.TabIndex = 1;
             this.labeloffers.Text = "Liste des offres";
             // 
@@ -163,7 +167,7 @@
             this.tbListActivities.Controls.Add(this.btnRefreshActivities);
             this.tbListActivities.Controls.Add(this.labellistActvities);
             this.tbListActivities.Controls.Add(this.dgvListActivities);
-            this.tbListActivities.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbListActivities.Font = new System.Drawing.Font("Open Sans", 8.25F);
             this.tbListActivities.Location = new System.Drawing.Point(4, 22);
             this.tbListActivities.Name = "tbListActivities";
             this.tbListActivities.Padding = new System.Windows.Forms.Padding(3);
@@ -175,6 +179,7 @@
             // btnRemoveActivity
             // 
             this.btnRemoveActivity.Enabled = false;
+            this.btnRemoveActivity.Font = new System.Drawing.Font("Open Sans", 10F);
             this.btnRemoveActivity.Location = new System.Drawing.Point(260, 347);
             this.btnRemoveActivity.Name = "btnRemoveActivity";
             this.btnRemoveActivity.Size = new System.Drawing.Size(139, 27);
@@ -186,6 +191,7 @@
             // btnEditActivity
             // 
             this.btnEditActivity.Enabled = false;
+            this.btnEditActivity.Font = new System.Drawing.Font("Open Sans", 10F);
             this.btnEditActivity.Location = new System.Drawing.Point(133, 347);
             this.btnEditActivity.Name = "btnEditActivity";
             this.btnEditActivity.Size = new System.Drawing.Size(121, 27);
@@ -196,6 +202,7 @@
             // 
             // btnAddActivity
             // 
+            this.btnAddActivity.Font = new System.Drawing.Font("Open Sans", 10F);
             this.btnAddActivity.Location = new System.Drawing.Point(677, 347);
             this.btnAddActivity.Name = "btnAddActivity";
             this.btnAddActivity.Size = new System.Drawing.Size(121, 27);
@@ -206,6 +213,7 @@
             // 
             // btnRefreshActivities
             // 
+            this.btnRefreshActivities.Font = new System.Drawing.Font("Open Sans", 10F);
             this.btnRefreshActivities.Location = new System.Drawing.Point(6, 347);
             this.btnRefreshActivities.Name = "btnRefreshActivities";
             this.btnRefreshActivities.Size = new System.Drawing.Size(121, 27);
@@ -217,10 +225,10 @@
             // labellistActvities
             // 
             this.labellistActvities.AutoSize = true;
-            this.labellistActvities.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labellistActvities.Font = new System.Drawing.Font("Open Sans", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labellistActvities.Location = new System.Drawing.Point(6, 13);
             this.labellistActvities.Name = "labellistActvities";
-            this.labellistActvities.Size = new System.Drawing.Size(140, 17);
+            this.labellistActvities.Size = new System.Drawing.Size(134, 19);
             this.labellistActvities.TabIndex = 2;
             this.labellistActvities.Text = "Liste des Activités";
             // 
@@ -243,6 +251,7 @@
             this.tbListCandidacies.Controls.Add(this.btnRefreshCandidacies);
             this.tbListCandidacies.Controls.Add(this.labelListCandidacies);
             this.tbListCandidacies.Controls.Add(this.dgvListCandidacies);
+            this.tbListCandidacies.Font = new System.Drawing.Font("Open Sans", 8.25F);
             this.tbListCandidacies.Location = new System.Drawing.Point(4, 22);
             this.tbListCandidacies.Name = "tbListCandidacies";
             this.tbListCandidacies.Size = new System.Drawing.Size(804, 380);
@@ -252,7 +261,7 @@
             // 
             // btnRefreshCandidacies
             // 
-            this.btnRefreshCandidacies.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRefreshCandidacies.Font = new System.Drawing.Font("Open Sans", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRefreshCandidacies.Location = new System.Drawing.Point(6, 344);
             this.btnRefreshCandidacies.Name = "btnRefreshCandidacies";
             this.btnRefreshCandidacies.Size = new System.Drawing.Size(121, 27);
@@ -263,10 +272,10 @@
             // labelListCandidacies
             // 
             this.labelListCandidacies.AutoSize = true;
-            this.labelListCandidacies.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelListCandidacies.Font = new System.Drawing.Font("Open Sans", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelListCandidacies.Location = new System.Drawing.Point(6, 10);
             this.labelListCandidacies.Name = "labelListCandidacies";
-            this.labelListCandidacies.Size = new System.Drawing.Size(173, 17);
+            this.labelListCandidacies.Size = new System.Drawing.Size(164, 19);
             this.labelListCandidacies.TabIndex = 7;
             this.labelListCandidacies.Text = "Liste des candidatures";
             // 
@@ -289,6 +298,7 @@
             this.tbListAccounts.Controls.Add(this.btnRefreshAccount);
             this.tbListAccounts.Controls.Add(this.labelAccounts);
             this.tbListAccounts.Controls.Add(this.dgvListAccounts);
+            this.tbListAccounts.Font = new System.Drawing.Font("Open Sans", 8.25F);
             this.tbListAccounts.Location = new System.Drawing.Point(4, 22);
             this.tbListAccounts.Name = "tbListAccounts";
             this.tbListAccounts.Size = new System.Drawing.Size(804, 380);
@@ -299,7 +309,7 @@
             // btnEnableAccount
             // 
             this.btnEnableAccount.Enabled = false;
-            this.btnEnableAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEnableAccount.Font = new System.Drawing.Font("Open Sans", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEnableAccount.Location = new System.Drawing.Point(133, 344);
             this.btnEnableAccount.Name = "btnEnableAccount";
             this.btnEnableAccount.Size = new System.Drawing.Size(166, 27);
@@ -310,7 +320,7 @@
             // 
             // btnRefreshAccount
             // 
-            this.btnRefreshAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRefreshAccount.Font = new System.Drawing.Font("Open Sans", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRefreshAccount.Location = new System.Drawing.Point(6, 344);
             this.btnRefreshAccount.Name = "btnRefreshAccount";
             this.btnRefreshAccount.Size = new System.Drawing.Size(121, 27);
@@ -346,9 +356,10 @@
             // 
             // btnLogout
             // 
-            this.btnLogout.Location = new System.Drawing.Point(732, 12);
+            this.btnLogout.Font = new System.Drawing.Font("Open Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogout.Location = new System.Drawing.Point(713, 6);
             this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(92, 23);
+            this.btnLogout.Size = new System.Drawing.Size(111, 34);
             this.btnLogout.TabIndex = 2;
             this.btnLogout.Text = "Se déconnecter";
             this.btnLogout.UseVisualStyleBackColor = true;
@@ -361,6 +372,7 @@
             this.ClientSize = new System.Drawing.Size(836, 459);
             this.Controls.Add(this.btnLogout);
             this.Controls.Add(this.tbHome);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormHome";
             this.Text = "Administraton Jobs";
             this.Load += new System.EventHandler(this.FormHome_Load);
