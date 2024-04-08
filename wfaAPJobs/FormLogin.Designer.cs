@@ -36,11 +36,13 @@
             this.boxPasswd = new System.Windows.Forms.TextBox();
             this.btnLogin = new System.Windows.Forms.Button();
             this.labelErrMesg = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // boxUserEmail
             // 
-            this.boxUserEmail.Location = new System.Drawing.Point(44, 147);
+            this.boxUserEmail.Location = new System.Drawing.Point(44, 180);
             this.boxUserEmail.Name = "boxUserEmail";
             this.boxUserEmail.Size = new System.Drawing.Size(181, 22);
             this.boxUserEmail.TabIndex = 0;
@@ -49,7 +51,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Open Sans", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(88, 62);
+            this.label1.Location = new System.Drawing.Point(80, 111);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(107, 20);
             this.label1.TabIndex = 1;
@@ -58,7 +60,7 @@
             // labelUserEmail
             // 
             this.labelUserEmail.AutoSize = true;
-            this.labelUserEmail.Location = new System.Drawing.Point(40, 128);
+            this.labelUserEmail.Location = new System.Drawing.Point(40, 161);
             this.labelUserEmail.Name = "labelUserEmail";
             this.labelUserEmail.Size = new System.Drawing.Size(78, 15);
             this.labelUserEmail.TabIndex = 2;
@@ -67,7 +69,7 @@
             // labelpasswd
             // 
             this.labelpasswd.AutoSize = true;
-            this.labelpasswd.Location = new System.Drawing.Point(40, 183);
+            this.labelpasswd.Location = new System.Drawing.Point(40, 216);
             this.labelpasswd.Name = "labelpasswd";
             this.labelpasswd.Size = new System.Drawing.Size(76, 15);
             this.labelpasswd.TabIndex = 4;
@@ -75,7 +77,7 @@
             // 
             // boxPasswd
             // 
-            this.boxPasswd.Location = new System.Drawing.Point(44, 202);
+            this.boxPasswd.Location = new System.Drawing.Point(44, 235);
             this.boxPasswd.Name = "boxPasswd";
             this.boxPasswd.Size = new System.Drawing.Size(181, 22);
             this.boxPasswd.TabIndex = 3;
@@ -83,9 +85,9 @@
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(92, 263);
+            this.btnLogin.Location = new System.Drawing.Point(90, 273);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(75, 27);
+            this.btnLogin.Size = new System.Drawing.Size(89, 27);
             this.btnLogin.TabIndex = 5;
             this.btnLogin.Text = "Connexion";
             this.btnLogin.UseVisualStyleBackColor = true;
@@ -96,17 +98,28 @@
             this.labelErrMesg.AutoSize = true;
             this.labelErrMesg.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelErrMesg.ForeColor = System.Drawing.Color.Red;
-            this.labelErrMesg.Location = new System.Drawing.Point(40, 97);
+            this.labelErrMesg.Location = new System.Drawing.Point(41, 141);
             this.labelErrMesg.Name = "labelErrMesg";
             this.labelErrMesg.Size = new System.Drawing.Size(56, 13);
             this.labelErrMesg.TabIndex = 6;
             this.labelErrMesg.Text = "message";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(276, 94);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 7;
+            this.pictureBox1.TabStop = false;
             // 
             // FormLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(274, 331);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.labelErrMesg);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.labelpasswd);
@@ -118,6 +131,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormLogin";
             this.Text = "Connexion";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -132,6 +146,7 @@
         private System.Windows.Forms.TextBox boxPasswd;
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.Label labelErrMesg;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

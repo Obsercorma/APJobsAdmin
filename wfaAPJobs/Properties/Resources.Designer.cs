@@ -61,6 +61,16 @@ namespace wfaAPJobs.Properties {
         }
         
         /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap J {
+            get {
+                object obj = ResourceManager.GetObject("J", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Server=localhost;Port=3306;User Id=bddjobs_user;Password=XhcwCxyEH/tBo@nH;DataBase=bddjobs.
         /// </summary>
         internal static string MARIADB_SERVER_PATH {

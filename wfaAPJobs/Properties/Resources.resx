@@ -117,40 +117,44 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="REQ_UPDATE_OFFER_VALIDITY" xml:space="preserve">
+    <value>UPDATE offre SET estValide = @estValide WHERE idOffre = @id ;</value>
+  </data>
+  <data name="REQ_INSERT_ACTIVITY" xml:space="preserve">
+    <value>INSERT INTO activite(intitAct, estActif) VALUES(@intitAct, @estActif);</value>
+  </data>
+  <data name="REQ_UPDATE_ACTIVITY_DISPLAYING" xml:space="preserve">
+    <value>UPDATE activite SET estActif = @estActif WHERE idAct = @idAct;</value>
+  </data>
+  <data name="REQ_GET_CANDIDATURES" xml:space="preserve">
+    <value>SELECT O.*,U.*,E.nom nomEmployeur,E.prenom prenomEmployeur,E.civilite civEmployeur FROM candidature C INNER JOIN offre O ON O.idOffre = C.idOffre INNER JOIN utilisateur U ON U.idUser = C.idEtudiant INNER JOIN utilisateur E ON E.idUser = O.idEmployeur;</value>
+  </data>
+  <data name="REQ_GETOFFERS" xml:space="preserve">
+    <value>SELECT * FROM offre O INNER JOIN activite A ON O.idAct = A.idAct INNER JOIN typecontrat T ON O.idContrat = T.idContrat INNER JOIN utilisateur U ON O.idEmployeur = U.idUser AND U.idStatut &gt; 1;</value>
+  </data>
+  <data name="REQ_DELETE_ACTIVITY" xml:space="preserve">
+    <value>DELETE FROm activite WHERE idAct = @idAct;</value>
+  </data>
+  <data name="REQ_UPDATE_OFFER_DISPLAYING" xml:space="preserve">
+    <value>UPDATE offre SET estRetire = @estRetire WHERE idOffre = @id ;</value>
+  </data>
+  <data name="REQ_GET_ACCOUNTS" xml:space="preserve">
+    <value>SELECT U.*, S.intitStatut FROM utilisateur U INNER JOIN statut S ON S.idStatut = U.idStatut;</value>
+  </data>
+  <data name="REQ_UPDATE_ACTIVITY" xml:space="preserve">
+    <value>UPDATE activite SET intitAct = @intitAct, estActif = @estActif WHERE idAct = @idAct;</value>
+  </data>
   <data name="MARIADB_SERVER_PATH" xml:space="preserve">
     <value>Server=localhost;Port=3306;User Id=bddjobs_user;Password=XhcwCxyEH/tBo@nH;DataBase=bddjobs</value>
   </data>
   <data name="REQ_BAN_OR_UNBAN_ACCOUNT" xml:space="preserve">
     <value>UPDATE utilisateur SET isBan = @isBan WHERE idUser = @idUser;</value>
   </data>
-  <data name="REQ_DELETE_ACTIVITY" xml:space="preserve">
-    <value>DELETE FROm activite WHERE idAct = @idAct;</value>
-  </data>
   <data name="REQ_GETACTIVITIES" xml:space="preserve">
     <value>SELECT * FROM activite ORDER BY idAct;</value>
   </data>
-  <data name="REQ_GETOFFERS" xml:space="preserve">
-    <value>SELECT * FROM offre O INNER JOIN activite A ON O.idAct = A.idAct INNER JOIN typecontrat T ON O.idContrat = T.idContrat INNER JOIN utilisateur U ON O.idEmployeur = U.idUser AND U.idStatut &gt; 1;</value>
-  </data>
-  <data name="REQ_GET_ACCOUNTS" xml:space="preserve">
-    <value>SELECT U.*, S.intitStatut FROM utilisateur U INNER JOIN statut S ON S.idStatut = U.idStatut;</value>
-  </data>
-  <data name="REQ_GET_CANDIDATURES" xml:space="preserve">
-    <value>SELECT O.*,U.*,E.nom nomEmployeur,E.prenom prenomEmployeur,E.civilite civEmployeur FROM candidature C INNER JOIN offre O ON O.idOffre = C.idOffre INNER JOIN utilisateur U ON U.idUser = C.idEtudiant INNER JOIN utilisateur E ON E.idUser = O.idEmployeur;</value>
-  </data>
-  <data name="REQ_INSERT_ACTIVITY" xml:space="preserve">
-    <value>INSERT INTO activite(intitAct, estActif) VALUES(@intitAct, @estActif);</value>
-  </data>
-  <data name="REQ_UPDATE_ACTIVITY" xml:space="preserve">
-    <value>UPDATE activite SET intitAct = @intitAct, estActif = @estActif WHERE idAct = @idAct;</value>
-  </data>
-  <data name="REQ_UPDATE_ACTIVITY_DISPLAYING" xml:space="preserve">
-    <value>UPDATE activite SET estActif = @estActif WHERE idAct = @idAct;</value>
-  </data>
-  <data name="REQ_UPDATE_OFFER_DISPLAYING" xml:space="preserve">
-    <value>UPDATE offre SET estRetire = @estRetire WHERE idOffre = @id ;</value>
-  </data>
-  <data name="REQ_UPDATE_OFFER_VALIDITY" xml:space="preserve">
-    <value>UPDATE offre SET estValide = @estValide WHERE idOffre = @id ;</value>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="J" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\J.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

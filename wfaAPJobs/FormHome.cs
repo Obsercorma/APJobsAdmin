@@ -56,7 +56,7 @@ namespace wfaAPJobs
             {
                 dgvListActivities.Rows.Add(
                     activity.getId(),
-                    activity.getNom() + " | #" + activity.getId().ToString(),
+                    activity.getNom(),
                     activity.getEstActifAsText()
                 );
             }
