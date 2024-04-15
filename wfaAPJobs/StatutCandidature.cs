@@ -8,9 +8,16 @@ namespace wfaAPJobs
 {
     public class StatutCandidature
     {
+        // Identifiant du statut de candidature
         public readonly int idStatut;
+
+        // Description du statut de candidature
         public readonly string descStatut;
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="_idStatut">Identifiant du statut de candidature</param>
         public StatutCandidature(int _idStatut)
         {
             this.idStatut = _idStatut;

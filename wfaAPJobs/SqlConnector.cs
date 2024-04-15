@@ -13,9 +13,17 @@ namespace wfaAPJobs
      */
     public class SqlConnector
     {
+        // MySQL
         private MySqlConnection cnx;
         private MySqlDataReader reqQuery;
+        // END;
+
+        // Indicateur: Erreur retournee depuis la BDD.
         private bool gotErrorCnx = false;
+
+        /// <summary>
+        /// Initialisation de la connexion a la base de donnees
+        /// </summary>
         public SqlConnector()
         {
             try
@@ -27,6 +35,12 @@ namespace wfaAPJobs
                 this.gotErrorCnx = true;
             }
         }
+        /// <summary>
+        /// Execute la requete preparee avec ses arguments. N'attend aucun resultat.
+        /// </summary>
+        /// <param name="request">Chaine de la requete preparee</param>
+        /// <param name="args">Arguments de la requete</param>
+        /// <returns>Retourne vrai si la requete s'est effectue correctement</returns>
         public bool prepareAndExecNonQuery(string request, Dictionary<string,object> args)
         {
             try
@@ -45,6 +59,12 @@ namespace wfaAPJobs
             }
             return true;
         }
+
+        /// <summary>
+        /// Execute la requete renseignee. 
+        /// </summary>
+        /// <param name="request">Requete SQL</param>
+        /// <returns>Retourne les lignes resultantes sous forme de dictionnaire</returns>
         public List<Dictionary<string,object>> query(string request)
         {
             try
@@ -70,6 +90,12 @@ namespace wfaAPJobs
                 return null;
             }
         }
+        /// <summary>
+        /// Execute la requete preparee avec ses arguments.
+        /// </summary>
+        /// <param name="request">Chaine de la requete preparee</param>
+        /// <param name="args">Arguments de la requete</param>
+        /// <returns>Retourne les lignes resultantes de la requete executee.</returns>
         public List<Dictionary<string, object>> query(string request, Dictionary<string,string> args)
         {
             try
@@ -100,10 +126,18 @@ namespace wfaAPJobs
                 return null;
             }
         }
+
+        /// <summary>
+        /// Stoppe la connexion pour une interrogation SQL.
+        /// </summary>
         public void CloseQuery()
         {
             if(this.reqQuery != null) this.reqQuery.Close();
         }
+        
+        /// <summary>
+        /// Stoppe la connexion a la base de donnees.
+        /// </summary>
         public void CloseDB()
         {
             this.cnx.Close();

@@ -9,24 +9,40 @@ namespace wfaAPJobs
 {
     public class Utilisateur
     {
+        // Identifiant Utilisateur
         private int id;
+
+        // Civilite de l'utilisateur
         private int civilite;
+
+        // Nom et prenom de l'utilisateur
         private string nom, prenom;
-        private bool estBannie;
+
+        // Indicateur: Utilisateur est banni
+        private bool estBanni;
+
+        // Adresse email de l'utilisateur
         private string email;
+
+        // Numero de telephone de l'utilisateur
         private string tel;
-        private string cv;
+
+        // Chemin d'acces au CV de l'utilisateur (spécialement pour l'etudiant).
+        private string cv = null;
+
+        // Statut de l'utilisateur (Etudiant, Employeur particulier/professionnel).
         private int statut;
 
         /// <summary>
         /// Constructeur Utilisateur: Professionnel (WithCoords)
         /// </summary>
-        /// <param name="_id"></param>
-        /// <param name="_civilite"></param>
-        /// <param name="_nom"></param>
-        /// <param name="_prenom"></param>
-        /// <param name="_email"></param>
-        /// <param name="_tel"></param>
+        /// <param name="_id">Identifiant Utilisateur</param>
+        /// <param name="_civilite">Civilite de l'utilisateur</param>
+        /// <param name="_nom">Nom de l'utilisateur</param>
+        /// <param name="_prenom">Prenom de l'utilisateur</param>
+        /// <param name="_email">Adresse email de l'utilisateur</param>
+        /// <param name="_tel">Numero de telephone de l'utilisateur</param>
+        /// <param name="_statut">Statut de l'utilisateur (Etudiant, Employeur...)</param>
         public Utilisateur(
             int _id,
             int _civilite,
@@ -35,7 +51,7 @@ namespace wfaAPJobs
             string _email,
             string _tel,
             int _statut,
-            bool _estBannie
+            bool _estBanni
         )
         {
             this.id = _id;
@@ -44,23 +60,25 @@ namespace wfaAPJobs
             this.prenom = _prenom;
             this.email = _email;
             this.tel = _tel;
-            this.estBannie = _estBannie;
+            this.estBanni = _estBanni;
             this.statut = _statut;
         }
         /// <summary>
         /// Constructeur Utilisateur: Professionnel (WithoutCoords)
         /// </summary>
-        /// <param name="_id"></param>
-        /// <param name="_civilite"></param>
-        /// <param name="_nom"></param>
-        /// <param name="_prenom"></param>
+        /// <param name="_id">Identifiant Utilisateur</param>
+        /// <param name="_civilite">Civilite de l'utilisateur</param>
+        /// <param name="_nom">Nom de l'utilisateur</param>
+        /// <param name="_prenom">Prenom de l'utilisateur</param>
+        /// <param name="_statut">Statut de l'utilisateur (Etudiant, Employeur...)</param>
+        /// <param name="_estBanni">Indicateur: Utilisateur est banni</param>
         public Utilisateur(
             int _id,
             int _civilite,
             string _nom,
             string _prenom,
             int _statut,
-            bool _estBannie
+            bool _estBanni
         )
         {
             this.id = _id;
@@ -69,18 +87,20 @@ namespace wfaAPJobs
             this.prenom = _prenom;
             this.email = "";
             this.tel = "";
-            this.estBannie = _estBannie;
+            this.estBanni = _estBanni;
             this.statut = _statut;
         }
 
         /// <summary>
         /// Constructeur Utilisateur: Etudiant (WithoutCoords)
         /// </summary>
-        /// <param name="_id"></param>
-        /// <param name="_civilite"></param>
-        /// <param name="_nom"></param>
-        /// <param name="_prenom"></param>
-        /// <param name="_cv"></param>
+        /// <param name="_id">Identifiant Utilisateur</param>
+        /// <param name="_civilite">Civilite de l'utilisateur</param>
+        /// <param name="_nom">Nom de l'utilisateur</param>
+        /// <param name="_prenom">Prenom de l'utilisateur</param>
+        /// <param name="_statut">Statut de l'utilisateur (Etudiant, Employeur...)</param>
+        /// <param name="_estBanni">Indicateur: Utilisateur est banni</param>
+        /// <param name="_cv">Chemin d'acces au CV</param>
         public Utilisateur(
             int _id,
             int _civilite,
@@ -88,7 +108,7 @@ namespace wfaAPJobs
             string _prenom,
             string _cv,
             int _statut,
-            bool _estBannie
+            bool _estBanni
         )
         {
             this.id = _id;
@@ -99,18 +119,20 @@ namespace wfaAPJobs
             this.tel = "";
             this.cv = _cv;
             this.statut = _statut;
-            this.estBannie = _estBannie;
+            this.estBanni = _estBanni;
         }
         /// <summary>
         /// Constrcteur Utilisateur: Etudiant (WithCoords)
         /// </summary>
-        /// <param name="_id"></param>
-        /// <param name="_civilite"></param>
-        /// <param name="_nom"></param>
-        /// <param name="_prenom"></param>
-        /// <param name="_email"></param>
-        /// <param name="_tel"></param>
-        /// <param name="_cv"></param>
+        /// <param name="_id">Identifiant Utilisateur</param>
+        /// <param name="_civilite">Civilite de l'utilisateur</param>
+        /// <param name="_nom">Nom de l'utilisateur</param>
+        /// <param name="_prenom">Prenom de l'utilisateur</param>
+        /// <param name="_statut">Statut de l'utilisateur (Etudiant, Employeur...)</param>
+        /// <param name="_estBanni">Indicateur: Utilisateur est banni</param>
+        /// <param name="_cv">Chemin d'acces au CV</param>
+        /// <param name="_email">Adresse email de l'utilisateur</param>
+        /// <param name="_tel">Numero de telephone de l'utilisateur</param>
         public Utilisateur(
             int _id,
             int _civilite,
@@ -120,7 +142,7 @@ namespace wfaAPJobs
             string _tel,
             string _cv,
             int _statut,
-            bool _estBannie
+            bool _estBanni
         )
         {
             this.id = _id;
@@ -131,22 +153,40 @@ namespace wfaAPJobs
             this.tel = _tel;
             this.cv = _cv;
             this.statut = _statut;
-            this.estBannie = _estBannie;
+            this.estBanni = _estBanni;
         }
 
+        /// <summary>
+        /// Recuperation de l'identifiant utilisateur
+        /// </summary>
+        /// <returns>retourne l'identifiant de l'utilisateur</returns>
         public int getId()
         {
             return this.id;
         }
 
+        /// <summary>
+        /// Recuperation de la civilite de l'utilisateur
+        /// </summary>
+        /// <returns>retourne la civilite sous forme d'entier</returns>
         public int getIdCivilite()
         {
             return this.civilite;
         }
+
+        /// <summary>
+        /// Recuperation du statut utilisateur (Employeur, Etudiant...)
+        /// </summary>
+        /// <returns>Retourne le statut Utilisateur</returns>
         public int getIdStatut()
         {
             return this.statut;
         }
+
+        /// <summary>
+        /// Recuperation du statut utilisateur
+        /// </summary>
+        /// <returns>Retourne la traduction de l'ID du statut utilisateur</returns>
         public string getStatut()
         {
             switch (this.statut)
@@ -159,10 +199,11 @@ namespace wfaAPJobs
                     return "Professionnel";
             }
         }
+
         /// <summary>
-        /// Retourne "M.", "Mme" en fonction de l'ID de civilite.
+        /// Recuperation de la civilite
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Retourne la traduction de l'ID de la civilite</returns>
         public string getCivilite()
         {
             switch (this.civilite)
@@ -175,32 +216,61 @@ namespace wfaAPJobs
                     return "~.";
             }
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>Retourne le nom de l'utilisateur</returns>
         public string getNom()
         {
             return this.nom;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>retourne le prenom de l'utilisateur</returns>
         public string getPrenom()
         {
             return this.prenom;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>Retourne l'adresse email de l'utilisateur</returns>
         public string getEmail()
         {
             return this.email;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>Retourne le numero de telephone de l'utilisateur</returns>
         public string getTel()
         {
             return this.tel;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>Retourne le chemin d'acces du CV (Retourne null si l'utilisateur n'est pas un etudiant).</returns>
         public string getCV()
         {
             return this.cv;
         }
 
+        /// <summary>
+        /// SET: Met a jour l'indicateur booleen : "Est bannie".
+        /// GET: retourne l'indicateur booleen.
+        /// </summary>
         public bool compteBanni
         {
             get
             {
-                return this.estBannie;
+                return this.estBanni;
             }
             set
             {
@@ -209,7 +279,7 @@ namespace wfaAPJobs
                 args.Add("@isBan", value);
                 args.Add("@idUser", this.id);
                 if (req.prepareAndExecNonQuery(Resources.REQ_BAN_OR_UNBAN_ACCOUNT, args))
-                    this.estBannie = value;
+                    this.estBanni = value;
                 req.CloseQuery();
                 req.CloseDB();
             }

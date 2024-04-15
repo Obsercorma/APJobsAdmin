@@ -10,19 +10,43 @@ namespace wfaAPJobs
 {
     public class Offre
     {
+        // Etat de conformite de l'offre
         private int _conformiteOffre = 0;
+
+        // Etat de retrait de l'offre
         private bool _estRetire = false;
+        
+        // Identifiant de l'offre
         public readonly int idOffre;
+
+        // Intitule de l'offre
         public readonly string intitOffre;
+
+        // Objet vers le secteur d'activite associe
         public readonly Secteur secteur;
+
+        // Lieu de travail
         public readonly string lieuTravail;
+
+        // Objet vers le type de contrat associe
         public readonly Contrat contrat;
+
+        // Date: Debut de la periode
         public readonly DateTime debutPeriode;
+
+        // Date: Fin de la periode
         public readonly DateTime finPeriode;
+
+        // Nom et identifiant de l'employeur.
         public readonly KeyValuePair<string,int> employeur;
 
+        // Constante: Etat de conformite -> etat par defaut (Offre n'etant pas validee explicitement.
         public static readonly int CONFORMITY_NOT_GIVEN = 0;
+
+        // Constante: Etat de conformite -> Offre validee explicitement
         public static readonly int CONFORMITY_VALIDATED = 1;
+
+        // Constante: Etat de conformite -> Offre non conforme
         public static readonly int CONFORMITY_UNVALIDATED = 2;
 
         public Offre(

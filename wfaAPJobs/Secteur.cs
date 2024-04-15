@@ -9,20 +9,22 @@ namespace wfaAPJobs
 {
     public class Secteur
     {
-        /// <summary>
-        /// Identifiant secteur d'activite
-        /// </summary>
+
+        // Identifiant secteur d'activite
         private int idSecteur;
-        /// <summary>
+
         /// Nom secteur d'activite
-        /// </summary>
         private string nomSecteur;
 
-        /// <summary>
         /// Secteur d'activite exploitable par un employeur.
-        /// </summary>
         private bool secteurActif;
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="_idSecteur">Identifiant du secteur d'activite</param>
+        /// <param name="_nomSecteur">Nom du secteur d'activite</param>
+        /// <param name="_secteurActif">Etat d'utilisation du secteur d'activite</param>
         public Secteur(int _idSecteur, string _nomSecteur, bool _secteurActif)
         {
             this.idSecteur = _idSecteur;
@@ -30,12 +32,28 @@ namespace wfaAPJobs
             this.secteurActif = _secteurActif;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>Retourne l'identifiant du secteur d'activite</returns>
         public int getId() => this.idSecteur;
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>Retourne le nom du secteur d'activite</returns>
         public string getNom() => this.nomSecteur;
         
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>Retourne l'etat d'utilisation du secteur d'activite sous forme de chaine (Oui/Non)</returns>
         public string getEstActifAsText() => this.estActif ? "Oui" : "Non";
 
+        /// <summary>
+        /// SET: Met a jour l'etat d'utilisation du secteur d'activite dans l'objet et la BDD
+        /// GET: Retourne l'etat d'utilisation du secteur d'activite
+        /// </summary>
         public bool estActif
         {
             get
