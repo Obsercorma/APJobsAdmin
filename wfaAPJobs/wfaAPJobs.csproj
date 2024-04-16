@@ -73,6 +73,7 @@
   <ItemGroup>
     <Compile Include="Candidature.cs" />
     <Compile Include="Contrat.cs" />
+    <Compile Include="Exceptions\UpdateContentUserException.cs" />
     <Compile Include="FormEditActivity.cs">
       <SubType>Form</SubType>
     </Compile>

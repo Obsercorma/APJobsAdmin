@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using wfaAPJobs.Properties;
+using wfaAPJobs.Exceptions;
 
 namespace wfaAPJobs
 {
@@ -109,7 +110,7 @@ namespace wfaAPJobs
                     utilisateur.getCivilite() + " " + utilisateur.getNom() + " " + utilisateur.getPrenom(),
                     utilisateur.getEmail(),
                     utilisateur.getTel(),
-                    utilisateur.getStatut(),
+                    utilisateur.estAdmin ? "Administrateur" : utilisateur.getStatut(),
                     utilisateur.getCV(),
                     utilisateur.compteBanni ? "Oui" : "Non"
                 );
@@ -152,7 +153,7 @@ namespace wfaAPJobs
             dgvListAccounts.Columns[3].Name = "téléphone";
             dgvListAccounts.Columns[4].Name = "Statut";
             dgvListAccounts.Columns[5].Name = "CV";
-            dgvListAccounts.Columns[6].Name = "Est banni";
+            dgvListAccounts.Columns[6].Name = "Est désactivé";
             dgvListAccounts.RowHeadersVisible = false;
 
         }
@@ -360,12 +361,24 @@ namespace wfaAPJobs
         /// </summary>
         private void btnEnableAccount_Click(object sender, EventArgs e)
         {
-            this.selectedAccount.compteBanni = !this.selectedAccount.compteBanni;
+            try
+            {
+                this.selectedAccount.compteBanni = !this.selectedAccount.compteBanni;
+            }
+            catch (UpdateContentUserException obj)
+            {
+                MessageBox.Show(obj.Message, "Erreur: Modification compte utilisateur", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
             this.renderAccounts();
             dgvListAccounts.CurrentCell = dgvListAccounts[6, this.posSelectedRow];
             this.updateAccountsActions();
         }
-        
+
+        private void btnRefreshCandidacies_Click(object sender, EventArgs e)
+        {
+            this.renderCandidacies();
+        }
+
         /// <summary>
         /// Retire une offre du site web (l'offre reste presente dans la liste d'objets et dans la BDD).
         /// </summary>

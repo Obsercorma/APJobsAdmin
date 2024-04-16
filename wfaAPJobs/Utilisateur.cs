@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using wfaAPJobs.Properties;
+using wfaAPJobs.Exceptions;
 
 namespace wfaAPJobs
 {
@@ -33,6 +34,9 @@ namespace wfaAPJobs
         // Statut de l'utilisateur (Etudiant, Employeur particulier/professionnel).
         private int statut;
 
+        // Indicateur est admin
+        public readonly bool estAdmin;
+
         /// <summary>
         /// Constructeur Utilisateur: Professionnel (WithCoords)
         /// </summary>
@@ -51,7 +55,8 @@ namespace wfaAPJobs
             string _email,
             string _tel,
             int _statut,
-            bool _estBanni
+            bool _estBanni,
+            bool _estAdmin=false
         )
         {
             this.id = _id;
@@ -62,6 +67,7 @@ namespace wfaAPJobs
             this.tel = _tel;
             this.estBanni = _estBanni;
             this.statut = _statut;
+            this.estAdmin = _estAdmin;
         }
         /// <summary>
         /// Constructeur Utilisateur: Professionnel (WithoutCoords)
@@ -78,7 +84,8 @@ namespace wfaAPJobs
             string _nom,
             string _prenom,
             int _statut,
-            bool _estBanni
+            bool _estBanni,
+            bool _estAdmin=false
         )
         {
             this.id = _id;
@@ -89,6 +96,7 @@ namespace wfaAPJobs
             this.tel = "";
             this.estBanni = _estBanni;
             this.statut = _statut;
+            this.estAdmin = _estAdmin;
         }
 
         /// <summary>
@@ -108,7 +116,8 @@ namespace wfaAPJobs
             string _prenom,
             string _cv,
             int _statut,
-            bool _estBanni
+            bool _estBanni,
+            bool _estAdmin=false
         )
         {
             this.id = _id;
@@ -120,6 +129,7 @@ namespace wfaAPJobs
             this.cv = _cv;
             this.statut = _statut;
             this.estBanni = _estBanni;
+            this.estAdmin = _estAdmin;
         }
         /// <summary>
         /// Constrcteur Utilisateur: Etudiant (WithCoords)
@@ -142,7 +152,8 @@ namespace wfaAPJobs
             string _tel,
             string _cv,
             int _statut,
-            bool _estBanni
+            bool _estBanni,
+            bool _estAdmin=false
         )
         {
             this.id = _id;
@@ -154,6 +165,7 @@ namespace wfaAPJobs
             this.cv = _cv;
             this.statut = _statut;
             this.estBanni = _estBanni;
+            this.estAdmin = _estAdmin;
         }
 
         /// <summary>
@@ -274,6 +286,8 @@ namespace wfaAPJobs
             }
             set
             {
+                if (this.id == FormLogin.idUtilisateurConnecte) throw new UpdateContentUserException("Vous ne pouvez pas désactiver votre propre compte !");
+                if (this.estAdmin) throw new UpdateContentUserException("Impossible de modifier l'état d'activité d'un compte administrateur !");
                 SqlConnector req = new SqlConnector();
                 Dictionary<string, object> args = new Dictionary<string, object>();
                 args.Add("@isBan", value);
@@ -307,7 +321,8 @@ namespace wfaAPJobs
                     dt["tel"].ToString(),
                     dt["cvUser"].ToString(),
                     int.Parse(dt["idStatut"].ToString()),
-                    bool.Parse(dt["isBan"].ToString())
+                    bool.Parse(dt["isBan"].ToString()),
+                    bool.Parse(dt["isAdmin"].ToString())
                 ));
             }
             req.CloseQuery();

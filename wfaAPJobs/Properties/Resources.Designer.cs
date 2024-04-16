@@ -107,7 +107,7 @@ namespace wfaAPJobs.Properties {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à SELECT O.*,U.*,E.nom nomEmployeur,E.prenom prenomEmployeur,E.civilite civEmployeur FROM candidature C INNER JOIN offre O ON O.idOffre = C.idOffre INNER JOIN utilisateur U ON U.idUser = C.idEtudiant INNER JOIN utilisateur E ON E.idUser = O.idEmployeur;.
+        ///   Recherche une chaîne localisée semblable à SELECT O.*,U.*,E.nom nomEmployeur,E.prenom prenomEmployeur,E.civilite civEmployeur, C.idStatut statutCandid FROM candidature C INNER JOIN offre O ON O.idOffre = C.idOffre INNER JOIN utilisateur U ON U.idUser = C.idEtudiant INNER JOIN utilisateur E ON E.idUser = O.idEmployeur;.
         /// </summary>
         internal static string REQ_GET_CANDIDATURES {
             get {

@@ -182,7 +182,7 @@
             this.btnRemoveActivity.Font = new System.Drawing.Font("Open Sans", 10F);
             this.btnRemoveActivity.Location = new System.Drawing.Point(260, 347);
             this.btnRemoveActivity.Name = "btnRemoveActivity";
-            this.btnRemoveActivity.Size = new System.Drawing.Size(139, 27);
+            this.btnRemoveActivity.Size = new System.Drawing.Size(172, 27);
             this.btnRemoveActivity.TabIndex = 9;
             this.btnRemoveActivity.Text = "Retirer une activité";
             this.btnRemoveActivity.UseVisualStyleBackColor = true;
@@ -268,6 +268,7 @@
             this.btnRefreshCandidacies.TabIndex = 8;
             this.btnRefreshCandidacies.Text = "Actualiser";
             this.btnRefreshCandidacies.UseVisualStyleBackColor = true;
+            this.btnRefreshCandidacies.Click += new System.EventHandler(this.btnRefreshCandidacies_Click);
             // 
             // labelListCandidacies
             // 

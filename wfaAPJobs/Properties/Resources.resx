@@ -127,7 +127,7 @@
     <value>UPDATE activite SET estActif = @estActif WHERE idAct = @idAct;</value>
   </data>
   <data name="REQ_GET_CANDIDATURES" xml:space="preserve">
-    <value>SELECT O.*,U.*,E.nom nomEmployeur,E.prenom prenomEmployeur,E.civilite civEmployeur FROM candidature C INNER JOIN offre O ON O.idOffre = C.idOffre INNER JOIN utilisateur U ON U.idUser = C.idEtudiant INNER JOIN utilisateur E ON E.idUser = O.idEmployeur;</value>
+    <value>SELECT O.*,U.*,E.nom nomEmployeur,E.prenom prenomEmployeur,E.civilite civEmployeur, C.idStatut statutCandid FROM candidature C INNER JOIN offre O ON O.idOffre = C.idOffre INNER JOIN utilisateur U ON U.idUser = C.idEtudiant INNER JOIN utilisateur E ON E.idUser = O.idEmployeur;</value>
   </data>
   <data name="REQ_GETOFFERS" xml:space="preserve">
     <value>SELECT * FROM offre O INNER JOIN activite A ON O.idAct = A.idAct INNER JOIN typecontrat T ON O.idContrat = T.idContrat INNER JOIN utilisateur U ON O.idEmployeur = U.idUser AND U.idStatut &gt; 1;</value>

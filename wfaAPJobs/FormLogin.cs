@@ -16,6 +16,7 @@ namespace wfaAPJobs
     {
         // Indicateur de connexion a l'interface principale.
         public static bool estConnecte = false;
+        public static int idUtilisateurConnecte = -1;
 
         /// <summary>
         /// 
@@ -34,7 +35,7 @@ namespace wfaAPJobs
             SqlConnector req = new SqlConnector();
             Dictionary<string, string> args = new Dictionary<string, string>();
             args.Add("@email", boxUserEmail.Text);
-            List<Dictionary<string,object>> data = req.query("SELECT nom, prenom, passwd FROM utilisateur WHERE email = @email", args);
+            List<Dictionary<string,object>> data = req.query("SELECT idUser, passwd FROM utilisateur WHERE email = @email", args);
             if(data != null && data.Count > 0)
             {
                 Dictionary<string,object> result = data[0];
@@ -45,6 +46,7 @@ namespace wfaAPJobs
                 {
                     labelErrMesg.Text = !BC.BCrypt.Verify(boxPasswd.Text, result["passwd"].ToString()) ? "Mot de passe invalide !" : "";
                     estConnecte = true;
+                    idUtilisateurConnecte = int.Parse(result["idUser"].ToString());
                     this.Close();
                 }
             }else

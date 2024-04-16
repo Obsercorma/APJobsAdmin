@@ -51,7 +51,7 @@ namespace wfaAPJobs
                 Utilisateur candidat = new Utilisateur(int.Parse(dt["idUser"].ToString()), int.Parse(dt["civilite"].ToString()), dt["nom"].ToString(), dt["prenom"].ToString(), dt["email"].ToString(), dt["tel"].ToString(), int.Parse(dt["idStatut"].ToString()), bool.Parse(dt["isBan"].ToString()));
                 Utilisateur employeur = new Utilisateur(int.Parse(dt["idEmployeur"].ToString()), int.Parse(dt["civEmployeur"].ToString()), dt["nomEmployeur"].ToString(), dt["prenomEmployeur"].ToString(), int.Parse(dt["idStatut"].ToString()), bool.Parse(dt["isBan"].ToString()));
                 Offre offreConcernee = Program.listOffers.Where(elem => (elem.idOffre == (int)dt["idOffre"])).ToList()[0];
-                candidatures.Add(new Candidature(candidat, new StatutCandidature(int.Parse(dt["idStatut"].ToString())), offreConcernee, employeur));
+                candidatures.Add(new Candidature(candidat, new StatutCandidature(int.Parse(dt["statutCandid"].ToString())), offreConcernee, employeur));
             }
 
             return candidatures;
