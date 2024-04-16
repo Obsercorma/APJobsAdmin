@@ -49,6 +49,19 @@ namespace wfaAPJobs
         // Constante: Etat de conformite -> Offre non conforme
         public static readonly int CONFORMITY_UNVALIDATED = 2;
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="_idOffre">Identifiant de l'offre</param>
+        /// <param name="_intitOffre">Intitule de l'offre</param>
+        /// <param name="_secteur">objet: Secteur d'activite</param>
+        /// <param name="_lieuTravail">Lieu de travail</param>
+        /// <param name="_contrat">objet: Type de contrat</param>
+        /// <param name="_debutPeriode">objet: Date de debut de la periode</param>
+        /// <param name="_finPeriode">objet: Date de fin de la periode</param>
+        /// <param name="_employeur">objet cle-valeur unique: Nom et identifiant l'employeur (provenant d'un compte utilisateur)</param>
+        /// <param name="conformiteOffre">Indicateur booleen: Conformite de l'offre</param>
+        /// <param name="estRetire">Indicateur booleen: Etat de retrait de l'offre</param>
         public Offre(
             int _idOffre,
             string _intitOffre,
@@ -72,6 +85,7 @@ namespace wfaAPJobs
             this._conformiteOffre = conformiteOffre;
             this._estRetire = estRetire;
         }
+
         /// <summary>
         /// Accesseur (R/W): Indique et met a jour la validitee de l'offre.
         /// </summary>
@@ -94,6 +108,11 @@ namespace wfaAPJobs
                 req.CloseDB();
             }
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>Retourne la traduction du code de conformite renseigne.</returns>
         public string getTypeConformite()
         {
             switch (this.conformiteOffre)
@@ -107,6 +126,9 @@ namespace wfaAPJobs
             }
         }
 
+        /// <summary>
+        /// Accesseur (R/W): Indique et met a jour l'etat de retrait de l'offre.
+        /// </summary>
         public bool estRetire
         {
             get
@@ -126,6 +148,11 @@ namespace wfaAPJobs
                 req.CloseDB();
             }
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>Retourne la liste des offres depuis la BDD.</returns>
         public static List<Offre> getAllOffers()
         {
             SqlConnector req = new SqlConnector();

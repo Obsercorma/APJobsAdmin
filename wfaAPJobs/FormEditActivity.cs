@@ -13,9 +13,16 @@ namespace wfaAPJobs
 {
     public partial class FormEditActivity : Form
     {
+        // Secteur d'activite a editer ou a inserer.
         private Secteur activityToEdit;
+
+        //Indique si le secteur d'activite doit etre insere ou edite.
         private bool isNewActivity;
         
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="_activityToEdit">Secteur d'activite a editer ou a inserer</param>
         public FormEditActivity(Secteur _activityToEdit)
         {
             InitializeComponent();
@@ -23,6 +30,10 @@ namespace wfaAPJobs
             this.isNewActivity = false;
             btnEditActivity.Text = "Éditer";
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public FormEditActivity()
         {
             InitializeComponent();
@@ -30,6 +41,9 @@ namespace wfaAPJobs
             this.isNewActivity = true;
         }
 
+        /// <summary>
+        /// Complete les champs present sur le WPF si le secteur d'activite provient de la base de donnees.
+        /// </summary>
         private void FormEditActivity_Load(object sender, EventArgs e)
         {
             if(this.activityToEdit != null)
@@ -43,6 +57,9 @@ namespace wfaAPJobs
                 MessageBox.Show("Impossible d'éditer le secteur d'activité !", "Erreur édition du secteur d'activité", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
         }
 
+        /// <summary>
+        /// Permet de valider "l'edition"/"l'insertion" du secteur d'activite
+        /// </summary>
         private void btnEditActivity_Click(object sender, EventArgs e)
         {
             SqlConnector req = new SqlConnector();

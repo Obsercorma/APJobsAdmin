@@ -14,13 +14,21 @@ namespace wfaAPJobs
 {
     public partial class FormLogin : Form
     {
+        // Indicateur de connexion a l'interface principale.
         public static bool estConnecte = false;
+
+        /// <summary>
+        /// 
+        /// </summary>
         public FormLogin()
         {
             InitializeComponent();
             labelErrMesg.Text = "";
         }
 
+        /// <summary>
+        /// Connecte l'administrateur de contenu l'interface de gestion.
+        /// </summary>
         private void btnLogin_Click(object sender, EventArgs e)
         {
             SqlConnector req = new SqlConnector();

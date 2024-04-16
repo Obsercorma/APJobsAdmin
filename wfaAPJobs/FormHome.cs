@@ -14,18 +14,28 @@ namespace wfaAPJobs
 {
     public partial class FormHome : Form
     {
-        
+        // Offre selectionnee lors d'un clique sur une cellule de la DGV listant les offres.
         Offre selectedOffer;
+
+        // Secteur d'activite selectionne lors d'un clique sur une cellule de la DGV en question.
         Secteur selectedActivity;
-        //Candidature selectedCandidacy;
+
+        // Compte utilisateur selectionne lors d'un clique sur une cellule de la DGV en question.
         Utilisateur selectedAccount;
+
+        // Indexes de selections lors de la selection.
         int posSelectedRow, posSelectedCol = 0;
+
+        /// <summary>
+        /// 
+        /// </summary>
         public FormHome()
         {
             InitializeComponent();
         }
+
         /// <summary>
-        /// Rendu DGV : Liste des offres
+        /// Rafraichit la DGV listant les offres.
         /// </summary>
         private void renderOffers()
         {
@@ -47,6 +57,9 @@ namespace wfaAPJobs
             }
         }
 
+        /// <summary>
+        /// Rafraichit la DGV listant les secteurs d'activites.
+        /// </summary>
         private void renderActivities()
         {
             dgvListActivities.Rows.Clear();
@@ -61,6 +74,10 @@ namespace wfaAPJobs
                 );
             }
         }
+
+        /// <summary>
+        /// Rafraichit la DGV listant les candidatures.
+        /// </summary>
         private void renderCandidacies()
         {
             dgvListCandidacies.Rows.Clear();
@@ -77,6 +94,9 @@ namespace wfaAPJobs
             }
         }
 
+        /// <summary>
+        /// Rafraichit la DGV listant les comptes utilisateurs.
+        /// </summary>
         private void renderAccounts()
         {
             dgvListAccounts.Rows.Clear();
@@ -95,7 +115,9 @@ namespace wfaAPJobs
                 );
             }
         }
-
+        /// <summary>
+        /// Configuration de chaque DGV et affiche les Offres (etant situe dans la 1ere collection "CollectionTabControl").
+        /// </summary>
         private void FormHome_Load(object sender, EventArgs e)
         {
             dgvListOffers.ColumnCount = 8;
@@ -135,11 +157,17 @@ namespace wfaAPJobs
 
         }
 
+        /// <summary>
+        /// Fermeture de la fenetre.
+        /// </summary>
         private void btnLogout_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        /// <summary>
+        /// Met a jour les actions de l'offre selectionnee
+        /// </summary>
         private void updateOffersActions()
         {
             btnCheckOffer.Enabled = true;
@@ -152,6 +180,9 @@ namespace wfaAPJobs
             btnRemoveOffer.Text = this.selectedOffer.estRetire ? "Remettre l'offre" : "Retirer l'offre";
         }
 
+        /// <summary>
+        /// Met a jour les actions du secteur d'activite selectionne.
+        /// </summary>
         private void updateActivitiesActions()
         {
             btnEditActivity.Enabled = true;
@@ -162,6 +193,9 @@ namespace wfaAPJobs
             this.selectedActivity = Program.listActivities.Where(activity => activity.getId() == selectedDgvIDActivity).ToList()[0];
         }
 
+        /// <summary>
+        /// Met a jour les actions du compte utilisateur selectionne
+        /// </summary>
         private void updateAccountsActions()
         {
             btnEnableAccount.Enabled = true;
@@ -173,6 +207,9 @@ namespace wfaAPJobs
         }
         // EVENTS
 
+        /// <summary>
+        /// Ouvre le navigateur et accède au CV de l'utilisateur (Etudiant).
+        /// </summary>
         private void dgvListAccounts_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             string cv = this.selectedAccount.getCV();
@@ -180,20 +217,32 @@ namespace wfaAPJobs
                 System.Diagnostics.Process.Start((Program.DEBUG_MODE ? "http://localhost:8000/" : "http://apjobs.test/") + cv);
         }
 
+        /// <summary>
+        /// Actualisation des secteurs d'activites lors d'un clique sur une cellule de la DGV.
+        /// </summary>
         private void dgvListActivities_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             this.updateActivitiesActions();
         }
-
+        /// <summary>
+        /// Actualisation des comptes utilisateurs lors d'un clique sur une cellule de la DGV.
+        /// </summary>
         private void dgvListAccounts_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             this.updateAccountsActions();
         }
 
+        /// <summary>
+        /// Actualisation des offres lors d'un clique sur une cellule de la DGV.
+        /// </summary
         private void dgvListOffers_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             this.updateOffersActions();
         }
+
+        /// <summary>
+        /// Retrait de la selection, et desactivation des actions concernant les secteurs d'activites.
+        /// </summary>
         private void btnRefreshActivities_Click(object sender, EventArgs e)
         {
             this.renderActivities();
@@ -202,6 +251,9 @@ namespace wfaAPJobs
             btnRemoveActivity.Enabled = false;
         }
 
+        /// <summary>
+        /// Retrait de la selection, et desactivation des actions concernant les offres.
+        /// </summary>
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             this.renderOffers();
@@ -210,6 +262,19 @@ namespace wfaAPJobs
             btnRemoveOffer.Enabled = false;
         }
 
+        /// <summary>
+        /// Retrait de la selection, et desactivation des actions concernant les comptes utilisateurs.
+        /// </summary>
+        private void btnRefreshAccount_Click(object sender, EventArgs e)
+        {
+            btnEnableAccount.Enabled = false;
+            this.renderAccounts();
+            dgvListAccounts.ClearSelection();
+        }
+
+        /// <summary>
+        /// Met a jour la conformite de l'offre.
+        /// </summary>
         private void btnCheckOffer_Click(object sender, EventArgs e)
         {
             this.selectedOffer.conformiteOffre = this.selectedOffer.conformiteOffre != Offre.CONFORMITY_VALIDATED ? Offre.CONFORMITY_VALIDATED : Offre.CONFORMITY_UNVALIDATED;
@@ -218,6 +283,9 @@ namespace wfaAPJobs
             this.updateOffersActions();
         }
         
+        /// <summary>
+        /// rafraichissement automatique lorsque l'utilisateur change d'onglet.
+        /// </summary>
         private void onChangeTabs(object sender, TabControlEventArgs e)
         {
             switch (e.TabPageIndex)
@@ -239,6 +307,9 @@ namespace wfaAPJobs
             }
         }
 
+        /// <summary>
+        /// Met a jour l'utilisation du secteur d'activite sur le site web lors d'une creation d'offre.
+        /// </summary>
         private void btnCheckActivity_Click(object sender, EventArgs e)
         {
             this.selectedActivity.estActif = !this.selectedActivity.estActif;
@@ -247,6 +318,9 @@ namespace wfaAPJobs
             this.updateActivitiesActions();
         }
 
+        /// <summary>
+        /// Retire le secteur d'activite parmi la liste des objets ainsi que sur la BDD.
+        /// </summary>
         private void btnRemoveActivity_Click(object sender, EventArgs e)
         {
             if (this.selectedActivity == null) return;
@@ -262,25 +336,28 @@ namespace wfaAPJobs
             MessageBox.Show("Une erreur s'est produite lors de la suppression du secteur d'activitié !", "Erreur suppression", MessageBoxButtons.OK,MessageBoxIcon.Warning);
         }
 
+        /// <summary>
+        /// Ouvre l'interface d'edition d'un secteur d'activite.
+        /// </summary>
         private void btnEditActivity_Click(object sender, EventArgs e)
         {
             FormEditActivity form = new FormEditActivity(this.selectedActivity);
             form.Show();
         }
 
+        /// <summary>
+        /// Ouvre l'interface d'edition en mode ajout pour un nouveau secteur d'activite.
+        /// </summary>
         private void btnAddActivity_Click(object sender, EventArgs e)
         {
             FormEditActivity form = new FormEditActivity();
             form.Show();
         }
 
-        private void btnRefreshAccount_Click(object sender, EventArgs e)
-        {
-            btnEnableAccount.Enabled = false;
-            this.renderAccounts();
-            dgvListAccounts.ClearSelection();
-        }
-
+        
+        /// <summary>
+        /// Met a jour l'activite d'un compte utilisateur.
+        /// </summary>
         private void btnEnableAccount_Click(object sender, EventArgs e)
         {
             this.selectedAccount.compteBanni = !this.selectedAccount.compteBanni;
@@ -289,6 +366,9 @@ namespace wfaAPJobs
             this.updateAccountsActions();
         }
         
+        /// <summary>
+        /// Retire une offre du site web (l'offre reste presente dans la liste d'objets et dans la BDD).
+        /// </summary>
         private void btnRemoveOffer_Click(object sender, EventArgs e)
         {
             this.selectedOffer.estRetire = !this.selectedOffer.estRetire;

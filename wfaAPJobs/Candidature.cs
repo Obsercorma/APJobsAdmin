@@ -9,10 +9,25 @@ namespace wfaAPJobs
 {
     public class Candidature
     {
+        // Compte utilisateur: Etudiant associe a la candidature.
         public readonly Utilisateur candidat;
+
+        // Compte Utilisateur: Employeur associe a la candidature.
         public readonly Utilisateur employeur;
+
+        // Statut de la candidature.
         public readonly StatutCandidature statutCandidat;
+
+        // Offre associe a la candidature.
         public readonly Offre offreCandidature;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="_candidat">Objet: Compte utilisateur: Etudiant associe a la candidature.</param>
+        /// <param name="_statutCandidature">Objet: Statut de la candidature.</param>
+        /// <param name="_offreCandidature">Offre associe a la candidature.</param>
+        /// <param name="_employeur">Objet: Compte Utilisateur: Employeur associe a la candidature.</param>
         public Candidature(Utilisateur _candidat, StatutCandidature _statutCandidature, Offre _offreCandidature, Utilisateur _employeur)
         {
             this.candidat = _candidat;
