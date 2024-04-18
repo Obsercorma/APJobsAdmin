@@ -215,7 +215,7 @@ namespace wfaAPJobs
         {
             string cv = this.selectedAccount.getCV();
             if(e.ColumnIndex == 5)
-                System.Diagnostics.Process.Start((Program.DEBUG_MODE ? "http://localhost:8000/" : "http://apjobs.test/") + cv);
+                System.Diagnostics.Process.Start((Program.DEBUG_MODE ? "http://localhost:8000/storage/" : "http://apjobs.test/storage/") + cv);
         }
 
         /// <summary>
@@ -374,6 +374,9 @@ namespace wfaAPJobs
             this.updateAccountsActions();
         }
 
+        /// <summary>
+        /// Actualisation des candidatures sur evennement.
+        /// </summary>
         private void btnRefreshCandidacies_Click(object sender, EventArgs e)
         {
             this.renderCandidacies();
