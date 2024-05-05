@@ -1,0 +1,35 @@
+﻿<Properties DisableMonoRequiredInfoBar="True">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workbench ActiveDocument="wfaAPJobs/Properties/Resources.resx">
+    <Files>
+      <File FileName="wfaAPJobs/Offre.cs" />
+      <File FileName="wfaAPJobs/FormEditActivity.cs" />
+      <File FileName="wfaAPJobs/FormEditActivity.resx" />
+      <File FileName="wfaAPJobs/FormEditActivity.Designer.cs" Line="1" Column="1" />
+      <File FileName="wfaAPJobs/App.config" Line="1" Column="1" />
+      <File FileName="wfaAPJobs/Properties/AssemblyInfo.cs" Line="1" Column="1" />
+      <File FileName="wfaAPJobs/Properties/Resources.resx" Line="138" Column="65" />
+      <File FileName="wfaAPJobs/Properties/Resources.Designer.cs" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="wfaAPJobs" expanded="True">
+            <Node name="wfaAPJobs" expanded="True">
+              <Node name="Properties" expanded="True">
+                <Node name="Resources.resx" expanded="True" selected="True" />
+              </Node>
+              <Node name="Resources" expanded="True" />
+              <Node name="FormEditActivity.cs" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
