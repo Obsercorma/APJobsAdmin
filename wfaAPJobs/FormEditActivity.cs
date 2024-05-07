@@ -72,7 +72,7 @@ namespace wfaAPJobs
             {
                 MessageBox.Show(
                     (this.isNewActivity ? "Ajout" : "Édition") + " effectué avec succès",
-                    (this.isNewActivity ? "Ajot" : "Édition") + " du secteur d'activité", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    (this.isNewActivity ? "Ajout" : "Édition") + " du secteur d'activité", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }else
             {
                 MessageBox.Show(

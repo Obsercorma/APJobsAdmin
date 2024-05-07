@@ -71,7 +71,7 @@ namespace wfaAPJobs.Properties {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Server=localhost;Port=3306;User Id=bddjobs_user;Password=XhcwCxyEH/tBo@nH;DataBase=bddjobs.
+        ///   Recherche une chaîne localisée semblable à Server=localhost;Port=3306;User Id=admin_jobs;Password=mh-PoADIgtd5dPd_;DataBase=bddjobs.
         /// </summary>
         internal static string MARIADB_SERVER_PATH {
             get {
@@ -98,7 +98,7 @@ namespace wfaAPJobs.Properties {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à SELECT U.*, S.intitStatut FROM utilisateur U INNER JOIN statut S ON S.idStatut = U.idStatut;.
+        ///   Recherche une chaîne localisée semblable à SELECT U.*, S.intitStatut FROM utilisateur U INNER JOIN statut S ON S.idStatut = U.idStatut WHERE isAdmin = 0;.
         /// </summary>
         internal static string REQ_GET_ACCOUNTS {
             get {
