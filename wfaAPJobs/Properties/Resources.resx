@@ -139,13 +139,13 @@
     <value>UPDATE offre SET estRetire = @estRetire WHERE idOffre = @id ;</value>
   </data>
   <data name="REQ_GET_ACCOUNTS" xml:space="preserve">
-    <value>SELECT U.*, S.intitStatut FROM utilisateur U INNER JOIN statut S ON S.idStatut = U.idStatut;</value>
+    <value>SELECT U.*, S.intitStatut FROM utilisateur U INNER JOIN statut S ON S.idStatut = U.idStatut WHERE isAdmin = 0;</value>
   </data>
   <data name="REQ_UPDATE_ACTIVITY" xml:space="preserve">
     <value>UPDATE activite SET intitAct = @intitAct, estActif = @estActif WHERE idAct = @idAct;</value>
   </data>
   <data name="MARIADB_SERVER_PATH" xml:space="preserve">
-    <value>Server=localhost;Port=3306;User Id=bddjobs_user;Password=XhcwCxyEH/tBo@nH;DataBase=bddjobs</value>
+    <value>Server=localhost;Port=3306;User Id=admin_jobs;Password=mh-PoADIgtd5dPd_;DataBase=bddjobs</value>
   </data>
   <data name="REQ_BAN_OR_UNBAN_ACCOUNT" xml:space="preserve">
     <value>UPDATE utilisateur SET isBan = @isBan WHERE idUser = @idUser;</value>
