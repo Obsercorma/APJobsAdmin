@@ -116,6 +116,15 @@ namespace wfaAPJobs.Properties {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à SELECT * FROM evenement;.
+        /// </summary>
+        internal static string REQ_GET_EVENTS {
+            get {
+                return ResourceManager.GetString("REQ_GET_EVENTS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à SELECT * FROM activite ORDER BY idAct;.
         /// </summary>
         internal static string REQ_GETACTIVITIES {

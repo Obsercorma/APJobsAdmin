@@ -3,7 +3,10 @@
 \\LSC-SRV-7210-0\tflahaut$\Documents\Visual Studio 2015\Projects\wfaAPJobs\wfaAPJobs\bin\Debug\wfaAPJobs.pdb
 \\LSC-SRV-7210-0\tflahaut$\Documents\Visual Studio 2015\Projects\wfaAPJobs\wfaAPJobs\bin\Debug\BCrypt.Net-Next.dll
 \\LSC-SRV-7210-0\tflahaut$\Documents\Visual Studio 2015\Projects\wfaAPJobs\wfaAPJobs\bin\Debug\MySql.Data.dll
+\\LSC-SRV-7210-0\tflahaut$\Documents\Visual Studio 2015\Projects\wfaAPJobs\wfaAPJobs\bin\Debug\Newtonsoft.Json.dll
 \\LSC-SRV-7210-0\tflahaut$\Documents\Visual Studio 2015\Projects\wfaAPJobs\wfaAPJobs\bin\Debug\BCrypt.Net-Next.xml
+\\LSC-SRV-7210-0\tflahaut$\Documents\Visual Studio 2015\Projects\wfaAPJobs\wfaAPJobs\bin\Debug\Newtonsoft.Json.xml
+\\LSC-SRV-7210-0\tflahaut$\Documents\Visual Studio 2015\Projects\wfaAPJobs\wfaAPJobs\obj\Debug\wfaAPJobs.csprojResolveAssemblyReference.cache
 \\LSC-SRV-7210-0\tflahaut$\Documents\Visual Studio 2015\Projects\wfaAPJobs\wfaAPJobs\obj\Debug\wfaAPJobs.FormEditActivity.resources
 \\LSC-SRV-7210-0\tflahaut$\Documents\Visual Studio 2015\Projects\wfaAPJobs\wfaAPJobs\obj\Debug\wfaAPJobs.FormHome.resources
 \\LSC-SRV-7210-0\tflahaut$\Documents\Visual Studio 2015\Projects\wfaAPJobs\wfaAPJobs\obj\Debug\wfaAPJobs.FormLogin.resources
@@ -11,4 +14,3 @@
 \\LSC-SRV-7210-0\tflahaut$\Documents\Visual Studio 2015\Projects\wfaAPJobs\wfaAPJobs\obj\Debug\wfaAPJobs.csproj.GenerateResource.Cache
 \\LSC-SRV-7210-0\tflahaut$\Documents\Visual Studio 2015\Projects\wfaAPJobs\wfaAPJobs\obj\Debug\wfaAPJobs.exe
 \\LSC-SRV-7210-0\tflahaut$\Documents\Visual Studio 2015\Projects\wfaAPJobs\wfaAPJobs\obj\Debug\wfaAPJobs.pdb
-\\LSC-SRV-7210-0\tflahaut$\Documents\Visual Studio 2015\Projects\wfaAPJobs\wfaAPJobs\obj\Debug\wfaAPJobs.csprojResolveAssemblyReference.cache

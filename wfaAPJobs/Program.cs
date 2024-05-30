@@ -20,6 +20,8 @@ namespace wfaAPJobs
         // Liste de toutes les candidatures.
         public static List<Candidature> listCandidacies;
 
+        public static List<Evenement> listEvents;
+
         // Liste de tous les comptes utilisateurs
         public static List<Utilisateur> listAccounts;
         public static bool DEBUG_MODE = true;

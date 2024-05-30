@@ -55,6 +55,13 @@
             this.labelAccounts = new System.Windows.Forms.Label();
             this.dgvListAccounts = new System.Windows.Forms.DataGridView();
             this.btnLogout = new System.Windows.Forms.Button();
+            this.tbListEvents = new System.Windows.Forms.TabPage();
+            this.dgvListEvents = new System.Windows.Forms.DataGridView();
+            this.labelEvents = new System.Windows.Forms.Label();
+            this.btnRefreshEvents = new System.Windows.Forms.Button();
+            this.btnPublishEvent = new System.Windows.Forms.Button();
+            this.btnAddEvent = new System.Windows.Forms.Button();
+            this.btnShowEvent = new System.Windows.Forms.Button();
             this.tbHome.SuspendLayout();
             this.tpListOffers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListOffers)).BeginInit();
@@ -64,6 +71,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvListCandidacies)).BeginInit();
             this.tbListAccounts.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListAccounts)).BeginInit();
+            this.tbListEvents.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListEvents)).BeginInit();
             this.SuspendLayout();
             // 
             // contextMenuStrip1
@@ -77,6 +86,7 @@
             this.tbHome.Controls.Add(this.tbListActivities);
             this.tbHome.Controls.Add(this.tbListCandidacies);
             this.tbHome.Controls.Add(this.tbListAccounts);
+            this.tbHome.Controls.Add(this.tbListEvents);
             this.tbHome.Location = new System.Drawing.Point(12, 41);
             this.tbHome.Multiline = true;
             this.tbHome.Name = "tbHome";
@@ -366,6 +376,83 @@
             this.btnLogout.UseVisualStyleBackColor = true;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
+            // tbListEvents
+            // 
+            this.tbListEvents.Controls.Add(this.btnShowEvent);
+            this.tbListEvents.Controls.Add(this.btnAddEvent);
+            this.tbListEvents.Controls.Add(this.btnPublishEvent);
+            this.tbListEvents.Controls.Add(this.btnRefreshEvents);
+            this.tbListEvents.Controls.Add(this.labelEvents);
+            this.tbListEvents.Controls.Add(this.dgvListEvents);
+            this.tbListEvents.Location = new System.Drawing.Point(4, 22);
+            this.tbListEvents.Name = "tbListEvents";
+            this.tbListEvents.Size = new System.Drawing.Size(804, 380);
+            this.tbListEvents.TabIndex = 4;
+            this.tbListEvents.Text = "Évènements";
+            this.tbListEvents.UseVisualStyleBackColor = true;
+            // 
+            // dgvListEvents
+            // 
+            this.dgvListEvents.AllowUserToAddRows = false;
+            this.dgvListEvents.AllowUserToDeleteRows = false;
+            this.dgvListEvents.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvListEvents.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
+            this.dgvListEvents.Location = new System.Drawing.Point(0, 42);
+            this.dgvListEvents.Name = "dgvListEvents";
+            this.dgvListEvents.ReadOnly = true;
+            this.dgvListEvents.Size = new System.Drawing.Size(804, 297);
+            this.dgvListEvents.TabIndex = 1;
+            // 
+            // labelEvents
+            // 
+            this.labelEvents.AutoSize = true;
+            this.labelEvents.Font = new System.Drawing.Font("Open Sans", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelEvents.Location = new System.Drawing.Point(6, 13);
+            this.labelEvents.Name = "labelEvents";
+            this.labelEvents.Size = new System.Drawing.Size(94, 19);
+            this.labelEvents.TabIndex = 2;
+            this.labelEvents.Text = "Évènements";
+            // 
+            // btnRefreshEvents
+            // 
+            this.btnRefreshEvents.Font = new System.Drawing.Font("Open Sans", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRefreshEvents.Location = new System.Drawing.Point(10, 345);
+            this.btnRefreshEvents.Name = "btnRefreshEvents";
+            this.btnRefreshEvents.Size = new System.Drawing.Size(121, 27);
+            this.btnRefreshEvents.TabIndex = 5;
+            this.btnRefreshEvents.Text = "Actualiser";
+            this.btnRefreshEvents.UseVisualStyleBackColor = true;
+            // 
+            // btnPublishEvent
+            // 
+            this.btnPublishEvent.Font = new System.Drawing.Font("Open Sans", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPublishEvent.Location = new System.Drawing.Point(137, 345);
+            this.btnPublishEvent.Name = "btnPublishEvent";
+            this.btnPublishEvent.Size = new System.Drawing.Size(121, 27);
+            this.btnPublishEvent.TabIndex = 6;
+            this.btnPublishEvent.Text = "Publier";
+            this.btnPublishEvent.UseVisualStyleBackColor = true;
+            // 
+            // btnAddEvent
+            // 
+            this.btnAddEvent.Font = new System.Drawing.Font("Open Sans", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddEvent.Location = new System.Drawing.Point(677, 345);
+            this.btnAddEvent.Name = "btnAddEvent";
+            this.btnAddEvent.Size = new System.Drawing.Size(121, 27);
+            this.btnAddEvent.TabIndex = 7;
+            this.btnAddEvent.Text = "Ajouter";
+            this.btnAddEvent.UseVisualStyleBackColor = true;
+            // 
+            // btnShowEvent
+            // 
+            this.btnShowEvent.Font = new System.Drawing.Font("Open Sans", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnShowEvent.Location = new System.Drawing.Point(264, 345);
+            this.btnShowEvent.Name = "btnShowEvent";
+            this.btnShowEvent.Size = new System.Drawing.Size(121, 27);
+            this.btnShowEvent.TabIndex = 8;
+            this.btnShowEvent.Text = "Consulter";
+            this.btnShowEvent.UseVisualStyleBackColor = true;
+            // 
             // FormHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -390,6 +477,9 @@
             this.tbListAccounts.ResumeLayout(false);
             this.tbListAccounts.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListAccounts)).EndInit();
+            this.tbListEvents.ResumeLayout(false);
+            this.tbListEvents.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListEvents)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -421,5 +511,12 @@
         private System.Windows.Forms.Label labelAccounts;
         private System.Windows.Forms.DataGridView dgvListAccounts;
         private System.Windows.Forms.Button btnEnableAccount;
+        private System.Windows.Forms.TabPage tbListEvents;
+        private System.Windows.Forms.Label labelEvents;
+        private System.Windows.Forms.DataGridView dgvListEvents;
+        private System.Windows.Forms.Button btnRefreshEvents;
+        private System.Windows.Forms.Button btnPublishEvent;
+        private System.Windows.Forms.Button btnAddEvent;
+        private System.Windows.Forms.Button btnShowEvent;
     }
 }

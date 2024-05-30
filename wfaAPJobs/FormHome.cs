@@ -58,6 +58,26 @@ namespace wfaAPJobs
             }
         }
 
+        private void renderEvents()
+        {
+            dgvListEvents.Rows.Clear();
+            Program.listEvents = Evenement.getAllEvents();
+
+            foreach (Evenement evt in Program.listEvents)
+            {
+                dgvListEvents.Rows.Add(
+                    evt.idEvt,
+                    evt.titreEvt,
+                    evt.descriptionEvt,
+                    evt.dateEvt.ToString("MM/dd/yyyy"),
+                    String.Format("De {0} à {1}", evt.horaires.from, evt.horaires.to),
+                    "",
+                    evt.estPublie ? "Oui" : "Non",
+                    evt.auteur != null ? evt.auteur.getNom() : "CROUS"
+                );
+            }
+        }
+
         /// <summary>
         /// Rafraichit la DGV listant les secteurs d'activites.
         /// </summary>
@@ -156,6 +176,17 @@ namespace wfaAPJobs
             dgvListAccounts.Columns[6].Name = "Est désactivé";
             dgvListAccounts.RowHeadersVisible = false;
 
+            dgvListEvents.ColumnCount = 8;
+            dgvListEvents.Columns[0].Name = "#";
+            dgvListEvents.Columns[1].Name = "Titre";
+            dgvListEvents.Columns[2].Name = "Description";
+            dgvListEvents.Columns[3].Name = "Date";
+            dgvListEvents.Columns[4].Name = "Horaires";
+            dgvListEvents.Columns[5].Name = "Lieu";
+            dgvListEvents.Columns[6].Name = "Est Publié";
+            dgvListEvents.Columns[7].Name = "Auteur";
+            dgvListEvents.RowHeadersVisible = false;
+            this.renderEvents();
         }
 
         /// <summary>
